@@ -43,6 +43,13 @@ public class triggerActions : MonoBehaviour
             transform.position = door.pos;
             Camera.main.transform.position = door.campos;
         }
+
+        if(col.tag == "milk"){
+            milk door = col.gameObject.GetComponent<milk>();
+
+            door.range = true;
+            door.words.SetActive(true);
+        }
         
     }
 
@@ -59,6 +66,13 @@ public class triggerActions : MonoBehaviour
             oven.e.SetActive(false);
             oven.recipeZone = true;
 
+        }
+
+        if(col.tag == "milk"){
+            milk door = col.gameObject.GetComponent<milk>();
+
+            door.range = false;
+            door.words.SetActive(false);
         }
         
     }
