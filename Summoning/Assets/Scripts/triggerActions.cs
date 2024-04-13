@@ -64,6 +64,28 @@ public class triggerActions : MonoBehaviour
             door.range = true;
             door.words.SetActive(true);
         }
+
+        if(col.tag == "chocolate"){
+            chocola door = col.gameObject.GetComponent<chocola>();
+
+            door.range = true;
+            door.words.SetActive(true);
+        }
+
+        if(col.tag == "candle"){
+            candles door = col.gameObject.GetComponent<candles>();
+
+            door.range = true;
+            door.words.SetActive(true);
+        }
+
+        if(col.tag == "knife"){
+            knife door = col.gameObject.GetComponent<knife>();
+
+            door.range = true;
+            door.words.SetActive(true);
+        }
+        
         
     }
 
@@ -102,6 +124,26 @@ public class triggerActions : MonoBehaviour
             door.range = false;
             door.words.SetActive(false);
         }
+
+        if(col.tag == "chocolate"){
+            chocola door = col.gameObject.GetComponent<chocola>();
+
+            door.range = false;
+            door.words.SetActive(false);
+        }
         
+        if(col.tag == "candle"){
+            candles door = col.gameObject.GetComponent<candles>();
+
+            door.range = false;
+            door.words.SetActive(false);
+        }
+
+        if(col.tag == "knife"){
+            knife door = col.gameObject.GetComponent<knife>();
+
+            door.range = false;
+            door.words.SetActive(false);
+        }
     }
 }

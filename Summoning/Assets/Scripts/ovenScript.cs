@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ovenScript : MonoBehaviour
 {
+
+    public GameObject doorp;
     public GameObject x;
     public GameObject ouch;
     public GameObject why;
@@ -19,6 +22,10 @@ public class ovenScript : MonoBehaviour
     public GameObject e;
     public GameObject rp;
 
+    public GameObject odd;
+    public GameObject what;
+    public GameObject kn;
+
     public SpriteRenderer ovin;
     public Sprite ofout;
 
@@ -31,12 +38,17 @@ public class ovenScript : MonoBehaviour
     public Sprite r3;
     public Sprite r4;
 
+    public Sprite r5;
+
     public gameState state;
+
+
+    public GameObject s, s1, s2, s3, s4, s5, evil;
 
     public void addRecipe(){
 
         if(state.state >= 1){
-            ovin.sprite = ofout;
+            
         }
 
         if(state.state == 2){
@@ -109,17 +121,129 @@ public class ovenScript : MonoBehaviour
 
     IEnumerator recipeCoroutine()
     {
+        if(state.state == 5){
+            r1.sprite = r5;
+            StartCoroutine(endCoroutine());
+        }
         e.SetActive(false);
         rp.SetActive(true);
         yield return new WaitForSeconds(2f);
         // Handle completion or continue with another coroutine
         rp.SetActive(false);
         e.SetActive(true);
+        if(state.state == 3){
+            StartCoroutine(oddCoroutine());
+        }
+        if(state.state == 4){
+            StartCoroutine(whatCoroutine());
+        }
+
+        
+        
         
     }
 
+     IEnumerator oddCoroutine()
+    {
+        odd.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        odd.SetActive(false);
+
+    }
+
+    IEnumerator whatCoroutine()
+    {
+        what.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(what2Coroutine());
+        what.SetActive(false);
+
+    }
+
+    IEnumerator what2Coroutine()
+    {
+        kn.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        what.SetActive(false);
+        kn.SetActive(false);
+
+    }
+
+    IEnumerator endCoroutine()
+    {
+        rp.SetActive(true);
+        yield return new WaitForSeconds(2f);
+
+
+        StartCoroutine(sCoroutine());
+    }
+
+    IEnumerator sCoroutine()
+    {
+        doorp.SetActive(false);
+        Camera.main.transform.position = new Vector3(0f, 240f, -10f);
+        s.SetActive(true);
+        
+        yield return new WaitForSeconds(0.5f);
+        
+        StartCoroutine(s1Coroutine());
+    }
+    IEnumerator s1Coroutine()
+    {
+
+        s1.SetActive(true);
+        
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(s2Coroutine());
+        
+    }
+    IEnumerator s2Coroutine()
+    {s2.SetActive(true);
+        
+        yield return new WaitForSeconds(0.5f);
+
+        StartCoroutine(s3Coroutine());
+        
+    }
+    IEnumerator s3Coroutine()
+    {s3.SetActive(true);
+        
+        yield return new WaitForSeconds(0.5f);
+
+        StartCoroutine(s4Coroutine());
+        
+    }
+    IEnumerator s4Coroutine()
+    {
+        s3.SetActive(true);
+        
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(s5Coroutine());
+        
+    }
+    IEnumerator s5Coroutine()
+    {s5.SetActive(true);
+        
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(s6Coroutine());
+
+        
+    }
+
+    IEnumerator s6Coroutine()
+    {evil.SetActive(true);
+        
+        yield return new WaitForSeconds(0.5f);
+       
+       SceneManager.LoadScene("EndScene");
+
+        
+    }
+
+
     public void ee(){
         e1.sprite = e2;
+        ovin.sprite = ofout;
         
     }
 

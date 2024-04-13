@@ -10,6 +10,9 @@ TagManager:
   - milk
   - recipe
   - salt
+  - chocolate
+  - candle
+  - knife
   layers:
   - Default
   - TransparentFX

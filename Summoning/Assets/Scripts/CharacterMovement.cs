@@ -15,20 +15,20 @@ public class CharacterMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-           transform.position = transform.position + new Vector3(0f, 0f, 0.25f);
+           transform.position = transform.position + new Vector3(0f, 0f, 0.5f);
         }
 
         else if (Input.GetKey(KeyCode.S))
         {
-           transform.position = transform.position + new Vector3(0f, 0f, -0.25f);
+           transform.position = transform.position + new Vector3(0f, 0f, -0.5f);
         }
         if (Input.GetKey(KeyCode.D))
         {
-           transform.position = transform.position + new Vector3(0.25f, 0f, 0f);
+           transform.position = transform.position + new Vector3(0.5f, 0f, 0f);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-           transform.position = transform.position + new Vector3(-0.25f, 0f, 0f);
+           transform.position = transform.position + new Vector3(-0.5f, 0f, 0f);
         }
 
     }

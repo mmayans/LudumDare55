@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class saltScript : MonoBehaviour
+public class knife : MonoBehaviour
 {
-
-    public bool range = false;
+    // Start is called before the first frame update
+   public bool range = false;
 
     public GameObject words;
 
@@ -17,15 +17,19 @@ public class saltScript : MonoBehaviour
 
     public ovenScript oven;
 
+    //public knife choc;
+
     // Update is called once per frame
     void Update()
     {
 
         if(range){
              if (Input.GetKey(KeyCode.E)){
-                if(state.state == 1){
-                    state.state = 2;
+                if(state.state == 4){
+                    state.state = 5;
                     oven.addRecipe();
+
+                   // choc.words = choc.e;
 
                     
                     Destroy(words);
@@ -35,7 +39,7 @@ public class saltScript : MonoBehaviour
                 }
                 else{
                     StartCoroutine(nopeCoroutine());
-                }
+                    }
                 }
         }
         
