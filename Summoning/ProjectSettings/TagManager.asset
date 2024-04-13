@@ -8,6 +8,8 @@ TagManager:
   - recipeCollider
   - door
   - milk
+  - recipe
+  - salt
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,44 @@ public class ovenScript : MonoBehaviour
     public GameObject e;
     public GameObject rp;
 
+    public SpriteRenderer ovin;
+    public Sprite ofout;
+
+    public SpriteRenderer e1;
+    public Sprite e2;
+
+
+    public SpriteRenderer r1;
+    public Sprite r2;
+    public Sprite r3;
+    public Sprite r4;
+
+    public gameState state;
+
+    public void addRecipe(){
+
+        if(state.state >= 1){
+            ovin.sprite = ofout;
+        }
+
+        if(state.state == 2){
+
+            r1.sprite = r2;
+        }
+        if(state.state == 3){
+
+            r1.sprite = r3;
+        }
+
+        if(state.state == 4){
+
+            r1.sprite = r4;
+        }
+
+        
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -73,10 +111,15 @@ public class ovenScript : MonoBehaviour
     {
         e.SetActive(false);
         rp.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         // Handle completion or continue with another coroutine
         rp.SetActive(false);
         e.SetActive(true);
+        
+    }
+
+    public void ee(){
+        e1.sprite = e2;
         
     }
 

@@ -50,6 +50,20 @@ public class triggerActions : MonoBehaviour
             door.range = true;
             door.words.SetActive(true);
         }
+
+        if(col.tag == "recipe"){
+            onRecipe door = col.gameObject.GetComponent<onRecipe>();
+
+            door.range = true;
+            door.words.SetActive(true);
+        }
+
+        if(col.tag == "salt"){
+            saltScript door = col.gameObject.GetComponent<saltScript>();
+
+            door.range = true;
+            door.words.SetActive(true);
+        }
         
     }
 
@@ -64,12 +78,26 @@ public class triggerActions : MonoBehaviour
 
         if(col.tag == "recipeCollider"){
             oven.e.SetActive(false);
-            oven.recipeZone = true;
+            oven.recipeZone = false;
 
         }
 
         if(col.tag == "milk"){
             milk door = col.gameObject.GetComponent<milk>();
+
+            door.range = false;
+            door.words.SetActive(false);
+        }
+
+        if(col.tag == "recipe"){
+            onRecipe door = col.gameObject.GetComponent<onRecipe>();
+
+            door.range = false;
+            door.words.SetActive(false);
+        }
+
+        if(col.tag == "salt"){
+            saltScript door = col.gameObject.GetComponent<saltScript>();
 
             door.range = false;
             door.words.SetActive(false);
